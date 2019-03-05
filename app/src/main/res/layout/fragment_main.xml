@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilCity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/tilCity_hint"
+            app:counterEnabled="true"
+            app:counterMaxLength="30"
+            android:layout_margin="@dimen/main_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtCity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textCapWords"
+                android:textSize="@dimen/txtCity_textSize"
+                android:maxLength="30" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/imgWeather"
+            android:layout_width="@dimen/imgWidth"
+            android:layout_height="@dimen/imgHeight"
+            android:layout_margin="@dimen/main_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilCity"
+            android:contentDescription="@string/weather_s_image" />
+
+        <TextView
+            android:id="@+id/lblCityName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/main_margin"
+            android:textSize="@dimen/lblCityName_textSize"
+            app:layout_constraintEnd_toStartOf="@+id/imgWeather"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilCity" />
+
+        <TextView
+            android:id="@+id/lblWeatherType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/main_margin"
+            android:textSize="@dimen/lblWeatherType_textSize"
+            app:layout_constraintEnd_toStartOf="@+id/imgWeather"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblCityName" />
+
+        <TextView
+            android:id="@+id/lblTemp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/main_margin"
+            android:layout_marginTop="@dimen/main_margin"
+            android:text="@string/lblTemp_text"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/imgWeather"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblWeatherType" />
+
+        <TextView
+            android:id="@+id/lblTempMin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/main_margin"
+            app:layout_constraintEnd_toStartOf="@+id/imgWeather"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblTemp" />
+
+        <TextView
+            android:id="@+id/lblTempMax"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/main_margin"
+            app:layout_constraintEnd_toStartOf="@+id/imgWeather"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblTempMin" />
+
+        <TextView
+            android:id="@+id/lblTempAverage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/main_margin"
+            android:layout_marginBottom="@dimen/main_margin"
+            app:layout_constraintEnd_toStartOf="@+id/imgWeather"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblTempMax" />
+
+        <TextView
+            android:id="@+id/lblRain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/main_margin"
+            app:layout_constraintEnd_toStartOf="@+id/imgWeather"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblTempAverage" />
+
+        <TextView
+            android:id="@+id/lblHumidity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/main_margin"
+            app:layout_constraintEnd_toStartOf="@+id/imgWeather"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblRain" />
+
+        <TextView
+            android:id="@+id/lblWind"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/main_margin"
+            android:layout_marginStart="@dimen/main_margin"
+            android:text="@string/lblWind_text"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@+id/imgWeather"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblHumidity" />
+
+        <TextView
+            android:id="@+id/lblWindSpeed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/main_margin"
+            app:layout_constraintEnd_toStartOf="@+id/imgWeather"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblWind" />
+
+        <TextView
+            android:id="@+id/lblWindDirection"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/main_margin"
+            app:layout_constraintEnd_toStartOf="@+id/imgWeather"
+            android:layout_marginBottom="@dimen/main_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblWindSpeed" />
+
+        <TextView
+            android:id="@+id/lblCloud"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/main_margin"
+            app:layout_constraintEnd_toStartOf="@+id/imgWeather"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblWindDirection" />
+
+        <TextView
+            android:id="@+id/lblSunriseDawn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/imgWeather"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="@dimen/main_margin"
+            app:layout_constraintTop_toBottomOf="@+id/lblCloud" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/main_margin"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_search_white_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/pbProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="invisible"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

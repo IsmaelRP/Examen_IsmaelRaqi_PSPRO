@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Examen_IsmaelRaqi_PSPRO</string>
+    <string name="tilCity_hint">Ciudad</string>
+    <string name="rain">Lluvia: %s</string>
+    <string name="image">%s%s%s</string>
+    <string name="windSpeed">velocidad %.2f mps</string>
+    <string name="cityName">%s, %s</string>
+    <string name="windDirection">dirección %.2f º</string>
+    <string name="porcent">Humedad: %.0f %%</string>
+    <string name="sunsetdawn">Amanecer: %s - Atardecer: %s</string>
+    <string name="minTemp">min %.2f ºC</string>
+    <string name="maxTemp">max %.2f ºC</string>
+    <string name="mediaTemp">media %.2f ºC</string>
+    <string name="cloud">Nubosidad: %d%%</string>
+    <string name="lblTemp_text">Temperatura:</string>
+    <string name="weather_s_image">Weather\'s image</string>
+    <string name="lblWind_text">Viento:</string>
+    <string name="title">OpenWeatherMap</string>
+    <string name="empty">You have to write a city!</string>
+</resources>
