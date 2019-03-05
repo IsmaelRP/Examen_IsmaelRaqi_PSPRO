@@ -1,6 +1,8 @@
 package com.practica.ismael.examen_ismaelraqi_pspro.service;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
 import android.content.Context;
@@ -33,9 +35,14 @@ public class MyIntentService extends JobIntentService {
         Intent resultIntent = new Intent(this, MainActivity.class);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
 
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            NotificationChannel mChannel = new NotificationChannel("10", "10", NotificationManager.IMPORTANCE_DEFAULT);
+            mNotificationManager.createNotificationChannel(mChannel);
+
+        }
+
         stackBuilder.addNextIntentWithParentStack(resultIntent);
-        PendingIntent resultPendingIntent =
-                stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationCompat.Builder notif = new NotificationCompat.Builder(this, "10");
         notif.setSmallIcon(R.drawable.ic_wb_sunny_black_24dp)
