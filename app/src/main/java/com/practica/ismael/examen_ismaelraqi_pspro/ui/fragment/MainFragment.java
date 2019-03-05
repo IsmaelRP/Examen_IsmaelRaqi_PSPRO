@@ -12,6 +12,7 @@ import com.practica.ismael.examen_ismaelraqi_pspro.data.base.Event;
 import com.practica.ismael.examen_ismaelraqi_pspro.data.model.WeatherInfo;
 import com.practica.ismael.examen_ismaelraqi_pspro.data.remote.ApiService;
 import com.practica.ismael.examen_ismaelraqi_pspro.databinding.FragmentMainBinding;
+import com.practica.ismael.examen_ismaelraqi_pspro.service.MyIntentService;
 import com.practica.ismael.examen_ismaelraqi_pspro.utils.Constants;
 import com.practica.ismael.examen_ismaelraqi_pspro.utils.KeyboardUtils;
 import com.practica.ismael.examen_ismaelraqi_pspro.utils.SnackbarUtils;
@@ -92,16 +93,8 @@ public class MainFragment extends Fragment {
         picasso.load(getString(R.string.image, img, weatherInfo.getImgWeather(), imgType))
                 .error(R.drawable.ic_wb_sunny_black_24dp)     //  Por si acaso
                 .into(b.imgWeather);
-        Notification notification = new NotificationCompat.Builder(requireContext(), Constants.CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_wb_sunny_black_24dp)
-                .setContentTitle("Weather")
-                .setAutoCancel(true)
-                .setDefaults(Notification.DEFAULT_SOUND | Notification.DEFAULT_LIGHTS)
-                .setContentText(weatherInfo.getName() + ", " + weatherInfo.getDescription())
-                .build();
+        MyIntentService.start(requireContext(), weatherInfo.getName(), weatherInfo.getDescription());
 
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(requireContext());
-        notificationManager.notify(1, notification);
     }
 
     private void observeError() {
